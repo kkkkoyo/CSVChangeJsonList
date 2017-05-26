@@ -25,7 +25,7 @@ for i,row in enumerate(csv_reader):
             sys.stdout.write('\"'+data+'\"')
         else:
             sys.stdout.write('\"'+data+'\",')
-    if(i==20): #最後は点を取る
+    if(i==sum(1 for line in open(options.csv_file_path))-1): #最後は点を取る
         print("] ")
     else:
         print("], ")
