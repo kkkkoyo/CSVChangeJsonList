@@ -20,7 +20,7 @@ for i,row in enumerate(csv_reader):
     sys.stdout.write("[")
     for j,data in enumerate(row):
         if (j==0):
-            sys.stdout.write('\" '+data+'\",')
+            sys.stdout.write('\"'+data+'\",')
         elif (j==len(row)-1):
             sys.stdout.write('\"'+data+'\"')
         else:
