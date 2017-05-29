@@ -50,15 +50,19 @@ for i,row in enumerate(csv_reader):
 #print ('],')
 mojiretu +='],\n'
 
-print (mojiretu)
+#print (mojiretu)
 
 f = open(options.json_file_path, 'r')
 test  = f
 json = ''
+isChanged = False
 for i,row in enumerate(f):
     json += row
     match = re.search(options.csv_file_path.strip('.csv'),str(row))
+
     if (match):
         json+=mojiretu
-f = open(options.json_file_path, 'w')
-f.write(json)
+        isChanged = True
+if(isChanged):
+    f = open(options.json_file_path, 'w')
+    f.write(json)
